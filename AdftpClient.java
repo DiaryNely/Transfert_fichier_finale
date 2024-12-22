@@ -16,7 +16,7 @@ import methode.Configuration;
 import methode.ListFiles;
 
 public class AdftpClient {
-    private static final String ServerHost = "192.168.1.113";
+    private static final String ServerHost = "localhost";
     private static final int Serverport = 6063;
     private Client client;
     private ServerIntermediate serverIntermediate;
@@ -81,7 +81,8 @@ public class AdftpClient {
 
                     if (filePath.isEmpty()) {
                         System.out.println(
-                                RED + "Le chemin du fichier est vide. Veuillez coller ou entrer un chemin." + RESET);
+                                RED + "Le chemin du fichier est vide. Veuillez coller ou entrer un chemin."
+                                        + RESET);
                         continue;
                     }
 
@@ -117,7 +118,6 @@ public class AdftpClient {
                 System.out.println(CYAN + "----------------------------------------" +
                         RESET);
             }
-
         } catch (Exception e) {
             System.err.println(RED + "Erreur : " + e.getMessage() + RESET);
             e.printStackTrace();

@@ -12,6 +12,16 @@ import java.util.Set;
 public class ServerIntermediate {
     private int port;
 
+    public boolean isEtat() {
+        return etat;
+    }
+
+    private boolean etat = false;
+
+    public void setEtat(boolean etat) {
+        this.etat = etat;
+    }
+
     public void setPort(int port) {
         this.port = port;
     }

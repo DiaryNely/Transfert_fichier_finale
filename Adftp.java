@@ -32,6 +32,7 @@ public class Adftp {
     public Adftp(String host, int port, List<ServerPrimary> primaryServers) throws IOException {
         this.serverIntermediate = new ServerIntermediate(port, primaryServers);
         Configuration config = Configuration.getInstance();
+        config.setServerIntermediate(serverIntermediate);
         this.client = config.getClient();
     }
 
@@ -55,6 +56,7 @@ public class Adftp {
     public void stop() {
         try {
             serverIntermediate.stopServer();
+            serverIntermediate.setEtat(true);
         } catch (IOException e) {
             System.err.println(RED + "Erreur : " + e.getMessage() + RESET);
         }
